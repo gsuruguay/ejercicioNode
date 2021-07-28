@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Ejercicios de node</title>
+</head>
+<body>
+    <h1>¿Que quieres hacer hoy?</h1>
+    <ul>
+        <li>Quiero saber la fecha de hoy <button id="btn_getFecha">&rarr;</button> </li> 
+        <li>Quiero leer un archivo txt <button id="btn_readTxt">&rarr;</button></li> 
+        <li>Quiero recibir un saludo con mi nombre</li> 
+        <form action="/saludar" method="post">
+            <input type="text" name="nombre" placeholder="Escribe aqui tu nombre...">
+            <input class="btn" type="submit" value="&rarr;">
+        </form>
+    </ul>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

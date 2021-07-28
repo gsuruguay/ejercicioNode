@@ -1,0 +1,12 @@
+h1, h2{
+    color: slateblue;
+}
+li{
+    margin: .9rem 0;
+}
+button, .btn{
+    background-color: rgb(243, 219, 112);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+}
