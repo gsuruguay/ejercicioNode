@@ -18,23 +18,20 @@ app.get("/getFecha", (req, res) => {
     res.send(`<h1>Hoy es ${fechaDeHoy.getDate()} del mes ${fechaDeHoy.getMonth() + 1} del año ${fechaDeHoy.getFullYear()}</h1>`)
 })
 
-app.get("/readTxt", (req, res) => {    
-    fs.readFile("archivo.txt", { encoding: "utf-8" }, (error, data) => {
-        if (error) {
-            console.log(error);
-            res.send(error);
-        } else {
-            console.log("Mensaje archivo .txt: ", data);
-            res.send(`<h2>Mensaje archivo txt</h2><p>${data}</p>`);
-        }
-    })
+app.get("/readTxt", async (req, res) => {
+    try {
+        const texto = await fs.readFileSync('archivo.txt', 'utf-8');
+        res.send(`<h1>${texto}</h1>`);
+    } catch (err) {
+        res.send(err);
+    }
 })
 
-app.post("/saludar", (req, res)=>{
+app.post("/saludar", (req, res) => {
     console.log(req.body);
     if (req.body.nombre != "") {
-        res.send(`<h1>Buen día ${req.body.nombre}! Bienvenid@</h1>`)        
-    }else{
+        res.send(`<h1>Buen día ${req.body.nombre}! Bienvenid@</h1>`)
+    } else {
         res.send("<h1>Ups! No pusiste tu nombre</h1>")
     }
 })
